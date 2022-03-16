@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.hero{
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right, transparent, mistyrose),url(loginbg.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-box{
+    width: 380px;
+    height: 460px;
+    position: relative;
+    margin: 6% auto;
+    background: rgba(150, 176, 201, 0.857);
+    padding: 5px;
+    overflow: hidden;
+}
+::placeholder{
+    color: rgb(13, 131, 131);
+}
+
+.loginhead{
+    padding: 10px 30px;
+    position:relative;
+    
+}
+
+.input-group{
+    top: 140px;
+    position: absolute;
+    width: 280px;    
+}
+.input-field{
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0px;
+    border-bottom: 1px solid rgb(63, 63, 63);
+    outline: none;
+    background: transparent; 
+}
+.submit-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #60c8f8, cornsilk);
+    border: 0;
+    outline: none;
+    border-radius: 30px ;
+}
+.check-box{
+    margin: 30px 10px 30px 0;
+}
+span{
+    color: black;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login{
+    left: 50px;
+}
