@@ -11,7 +11,10 @@ def login(request):
     psw=request.POST['psw']
     user = auth.authenticate(username=uname,password=psw)
     if user is not None:
-        return render(request,'success.html')
+        return render(request,'datahome.html')
     else:
         msg='Invalid username or password!!!'
         return render(request,'adminlogin.html',{'lmsg':msg})
+
+def register(request):
+    return render(request,'studentregistration.html')

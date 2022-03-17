@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'studentregistration.css' %}">
+    <title>Student Registration Form</title>
+
+</head>
+  
+ 
+<body>
+<h3>STUDENT REGISTRATION FORM</h3>
+
+ 
+<table align="center" cellpadding = "10">
+ 
+<!----- Name ---------------------------------------------------------->
+<tr>
+<td>NAME</td>
+<td><input type="text" name="First_Name" maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr> 
+
+<!----- Admission Number ---------------------------------------------------------->
+<tr>
+<td>ADMISSION NUMBER</td>
+<td>
+<input type="text" name="Admission_Number" maxlength="4" />
+(3 to 4 digit number)
+</td>
+</tr>
+ 
+<!----- AGE -------------------------------------------------------->
+<tr>
+<td>AGE</td>
+ 
+<td>
+    <input type="text" name="Age" maxlength="3" />
+
+</td>
+</tr> 
+ 
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td>GENDER</td>
+<td>
+Male <input type="radio" name="Gender" value="Male" />
+Female <input type="radio" name="Gender" value="Female" />
+</td>
+</tr>
+ 
+<!----- Address ---------------------------------------------------------->
+<tr>
+<td>ADDRESS <br /><br /><br /></td>
+<td><textarea name="Address" rows="4" cols="30"></textarea></td>
+</tr>
+
+ 
+<!----- Course ---------------------------------------------------------->
+<tr>
+<td>COURSE<br />APPLIED FOR</td>
+<td>
+Science
+<input type="radio" name="Course_Science" value="Science">
+Commerce
+<input type="radio" name="Course_BCom" value="B.Com">
+Humanities
+<input type="radio" name="Course_Humanities" value="Humanities">
+
+</td>
+</tr>
+ 
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table>
+ 
+</form>
+ 
+</body>
+</html>
