@@ -14,13 +14,17 @@
 <body>
 <h3>STUDENT REGISTRATION FORM</h3>
 
- 
+<form action="register" method="post">
+    {% csrf_token %}
+
+
 <table align="center" cellpadding = "10">
+    
  
 <!----- Name ---------------------------------------------------------->
 <tr>
 <td>NAME</td>
-<td><input type="text" name="First_Name" maxlength="30"/>
+<td><input type="text" name="name"  maxlength="30" required/>
 (max 30 characters a-z and A-Z)
 </td>
 </tr> 
@@ -29,29 +33,45 @@
 <tr>
 <td>ADMISSION NUMBER</td>
 <td>
-<input type="text" name="Admission_Number" maxlength="4" />
+<input type="text" name="Adnumb" maxlength="4" required/>
 (3 to 4 digit number)
 </td>
 </tr>
+
+<!----- Course ---------------------------------------------------------->
+<tr>
+    <td>COURSE<br />APPLIED FOR</td>
+    <td>
+    Science
+    <input type="radio" name="course" value="Science">
+    Commerce
+    <input type="radio" name="course" value="Commerce">
+    Humanities
+    <input type="radio" name="course" value="Humanities">
+    
+    </td>
+    </tr>
+
+<!----- Gender ----------------------------------------------------------->
+<tr>
+    <td>GENDER</td>
+    <td>
+    Male <input type="radio" name="Gender" value="Male" />
+    Female <input type="radio" name="Gender" value="Female" />
+    </td>
+    </tr>
  
 <!----- AGE -------------------------------------------------------->
 <tr>
 <td>AGE</td>
  
 <td>
-    <input type="text" name="Age" maxlength="3" />
+<input type="text" name="Age" maxlength="3" />
 
 </td>
 </tr> 
  
-<!----- Gender ----------------------------------------------------------->
-<tr>
-<td>GENDER</td>
-<td>
-Male <input type="radio" name="Gender" value="Male" />
-Female <input type="radio" name="Gender" value="Female" />
-</td>
-</tr>
+
  
 <!----- Address ---------------------------------------------------------->
 <tr>
@@ -59,21 +79,7 @@ Female <input type="radio" name="Gender" value="Female" />
 <td><textarea name="Address" rows="4" cols="30"></textarea></td>
 </tr>
 
- 
-<!----- Course ---------------------------------------------------------->
-<tr>
-<td>COURSE<br />APPLIED FOR</td>
-<td>
-Science
-<input type="radio" name="Course_Science" value="Science">
-Commerce
-<input type="radio" name="Course_BCom" value="B.Com">
-Humanities
-<input type="radio" name="Course_Humanities" value="Humanities">
 
-</td>
-</tr>
- 
 <!----- Submit and Reset ------------------------------------------------->
 <tr>
 <td colspan="2" align="center">
@@ -82,6 +88,8 @@ Humanities
 </td>
 </tr>
 </table>
+<font color="green"><center>{{success}}</center> </font>
+
  
 </form>
  
