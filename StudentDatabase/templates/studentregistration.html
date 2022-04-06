@@ -15,10 +15,11 @@
 <h3>STUDENT REGISTRATION FORM</h3>
 
 <form action="register" method="post">
-    {% csrf_token %}
+{% csrf_token %}
 
 
 <table align="center" cellpadding = "10">
+
     
  
 <!----- Name ---------------------------------------------------------->
@@ -39,18 +40,23 @@
 </tr>
 
 <!----- Course ---------------------------------------------------------->
+<form action="" name="filter" method="get"></form>
 <tr>
     <td>COURSE<br />APPLIED FOR</td>
     <td>
     Science
     <input type="radio" name="course" value="Science">
+    <!-- <a href="#" onclick="document.filter.submit()"></a> -->
     Commerce
     <input type="radio" name="course" value="Commerce">
+    <!-- <a href="#" onclick="document.filter.submit()"> </a> -->
     Humanities
     <input type="radio" name="course" value="Humanities">
     
+    
     </td>
-    </tr>
+</tr>
+
 
 <!----- Gender ----------------------------------------------------------->
 <tr>
@@ -59,7 +65,7 @@
     Male <input type="radio" name="Gender" value="Male" />
     Female <input type="radio" name="Gender" value="Female" />
     </td>
-    </tr>
+</tr>
  
 <!----- AGE -------------------------------------------------------->
 <tr>
@@ -87,6 +93,7 @@
 <input type="reset" value="Reset">
 </td>
 </tr>
+
 </table>
 <font color="green"><center>{{success}}</center> </font>
 

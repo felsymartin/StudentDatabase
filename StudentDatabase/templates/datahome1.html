@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'datahome1.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Home-Student Data</title>
+</head>
+<body>
+    <div class="menu_bar">
+        
+        <ul>
+            <form action="register">
+            <li> <a href="{% url 'register' %}"> Register Here </a></li>
+            </form>
+            <li> <a href="#">View</a> 
+                <div class="sub_menu1">
+                    <ul>
+                        <li class="subsub"><a href="#">Batch Wise</a><i class="fa fa-arrow-right" aria-hidden="true"></i> 
+                            <div class="sub_menu2">
+                                <ul>
+                                    <li> <a href="{% url 'view' 1 %}">Science</a>
+                                    <li> <a href="{% url 'view' 2 %}">Commerce</a>
+                                    <li> <a href="{% url 'view' 3 %}">Humanities</a>
+                                                                  
+                                </ul>
+                            </div>
+                        </li>
+                        <form action="viaid" method="get">
+                        <li> <a href="{% url 'viaid' %}">Search via ID</a></li> 
+                        </form>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+               
+
+    </div>
+    <div>
+        {% if course %}
+            {% for i in course %}
+            <div>
+                {{i.name}}
+                {{i.ad_no}}
+                {{i.age}}
+                {{i.gender}}
+                {{i.address}}
+            </div>
+            {% endfor %}
+
+        {% else %}
+        Nothing to display...
+        
+        {% endif %}
+    </div>
+    
+    
+</body>
+</html>

@@ -11,5 +11,8 @@ class student_details(models.Model):
     address = models.TextField()
     course = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.name
+
 
 

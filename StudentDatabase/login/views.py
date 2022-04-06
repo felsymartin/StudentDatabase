@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from multiprocessing import context
+from django.shortcuts import redirect, render
 from django.contrib.auth.models import User,auth
+from django.http import HttpResponse, JsonResponse
+from django.db.models.query_utils import Q
+
 
 from login.models import student_details
 
@@ -13,7 +17,8 @@ def login(request):
     psw=request.POST['psw']
     user = auth.authenticate(username=uname,password=psw)
     if user is not None:
-        return render(request,'datahome.html')
+        stdlist = student_details.objects.all()
+        return render(request,'datahome1.html', {'course':stdlist})
     else:
         msg='Invalid username or password!!!'
         return render(request,'adminlogin.html',{'lmsg':msg})
@@ -37,3 +42,27 @@ def register(request):
 
     else:
         return render(request,'studentregistration.html')
+
+
+def detailsview(request,btch):
+    if btch == 1:
+   
+        course = student_details.objects.filter(course='Science')
+    elif btch ==2:
+        course = student_details.objects.filter(course='Commerce')
+    else:
+        course = student_details.objects.filter(course='Humanities')
+    return render (request,'datahome1.html', {'course':course})
+    #return redirect('/detailsview/')
+
+
+def idview(request):
+    if 'search' in request.GET:
+        search = request.GET['search']
+        data = student_details.objects.filter(ad_no=search)
+    else:
+        data = student_details.objects.all()
+    context = {
+            'data' : data
+        }
+    return render (request,'search_1.html', context)
